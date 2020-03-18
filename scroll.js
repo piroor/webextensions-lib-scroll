@@ -80,7 +80,7 @@ export default class Scroll {
     }
     this._smoothScrollToCurrentOffset = delta;
 
-    let duration  = duration || this._defaultDuration;
+    duration = duration || this._defaultDuration;
     let startTime = Date.now();
 
     return new Promise((resolve, reject) => {
