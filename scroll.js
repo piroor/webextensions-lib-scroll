@@ -15,12 +15,13 @@ export default class Scroll {
   constructor(container, { duration = 150 }) {
     this._container       = container;
     this._defaultDuration = duration;
+    this._smoothScrollToCurrentOffset = 0;
   }
 
   scrollTo({ justNow, item, position, delta } = {}) {
     //console.log('scrollTo ', params);
     if (!justNow)
-      return this.smoothScrollTo(params);
+      return this.smoothScrollTo({ justNow, item, position, delta });
 
     if (item)
       this._container.scrollTop += this._calculateScrollDeltaForItem(item);
