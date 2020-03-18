@@ -63,7 +63,7 @@ export default class Scroll {
     this._smoothScrollToStopped = false;
 
     let startPosition = this._container.scrollTop;
-    let delta, endPosition;
+    let endPosition;
     if (item) {
       delta       = this._calculateScrollDeltaForItem(item);
       endPosition = startPosition + delta;
@@ -74,7 +74,6 @@ export default class Scroll {
     }
     else if (typeof delta == 'number') {
       endPosition = startPosition + delta;
-      delta       = delta;
     }
     else {
       throw new Error('No parameter to indicate scroll position');
