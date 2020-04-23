@@ -144,8 +144,9 @@ export default class Scroll {
     if (this._scrollToItemStopped)
       return;
 
-    this.scrollTo(Object.assign({}, options, {
+    this.scrollTo({
+      ...options,
       position: this._container.scrollTop + this._calculateScrollDeltaForItem(item)
-    }));
+    });
   }
 }
